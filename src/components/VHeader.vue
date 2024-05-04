@@ -9,14 +9,16 @@
 </script>
 
 <style lang="scss" scoped>
+@import "src/assets/scss/variables";
+
 header {
   padding: 16px 24px;
   border-radius: 16px;
-  border: 1px solid #F0F2F5;
-  background: #FFF;
+  border: 1px solid $Neutral-Neutral-200;
+  background: $Standart-White;
 }
 .header-title {
-  color: #1D2739;
+  color: $Neutral-Neutral-900;
   font-size: 18px;
   font-weight: 600;
   line-height: 24px;

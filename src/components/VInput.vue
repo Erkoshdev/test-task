@@ -11,8 +11,6 @@
 </template>
 
 <script setup>
-import {defineProps, defineEmits} from 'vue'
-
 const emit = defineEmits(['update'])
 const props = defineProps({
   type: {
@@ -40,13 +38,15 @@ function updateInput(event) {
 </script>
 
 <style scoped lang="scss">
+@import "src/assets/scss/variables";
+
 .form-container {
   display: flex;
   padding: var(--Indent-ind-12, 12px) var(--Indent-ind-16, 16px);
   align-items: center;
   gap: var(--Indent-ind-4, 4px);
   border-radius: var(--Radius-Rad-8, 8px);
-  background: var(--Neutral-Neutral-100, #F7F9FC);
+  background: $Neutral-Neutral-100;
 }
 input {
   background: transparent;

@@ -18,6 +18,32 @@
   </div>
 </template>
 
+<!--<script setup>-->
+<!--import {ref, watch} from "vue";-->
+
+<!--const props = defineProps({-->
+<!--  options: {-->
+<!--    type: Array,-->
+<!--    default: () => []-->
+<!--  },-->
+<!--  modelValue: {-->
+<!--    type: Array,-->
+<!--    default: () => []-->
+<!--  },-->
+<!--});-->
+
+<!--const emit = defineEmits(['update', 'input'])-->
+
+<!--const selectedOption = ref(props.modelValue);-->
+
+<!--watch(selectedOption, () => {-->
+<!--  emit('update:modelValue', selectedOption)-->
+<!--});-->
+<!--watch(props.modelValue, (newValue) => {-->
+<!--  selectedOption.value = newValue;-->
+<!--})-->
+<!--</script>-->
+
 <script>
 import { defineComponent } from 'vue'
 
@@ -49,10 +75,13 @@ export default defineComponent({
       this.selectedOption = newValue;
     },
   },
+
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "src/assets/scss/variables.scss";
+
 .checkbox-container {
   display: flex;
   padding: var(--Indent-ind-16, 16px) var(--Indent-ind-12, 12px);
@@ -73,7 +102,7 @@ input {
   position: relative;
   width: 16px;
   height: 16px;
-  border: 1px solid #98A2B3;
+  border: 1px solid $Neutral-Neutral-500;
   border-radius: 5px;
   pointer-events: none;
 }
@@ -89,14 +118,14 @@ input {
   opacity: 0;
 }
 input:checked ~ .checkmark {
-  border-color: #007BFF;
-  background: #007BFF;
+  border-color: $Primary-Blue-500;
+  background: $Primary-Blue-500;
   &:before {
     opacity: 1;
   }
 }
 p {
-  color: var(--Neutral-Neutral-900, #1D2739);
+  color: $Neutral-Neutral-900;
   font-size: var(--Size-Size-14, 14px);
   font-style: normal;
   font-weight: 500;

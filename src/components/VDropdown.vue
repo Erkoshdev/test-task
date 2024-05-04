@@ -10,12 +10,15 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import {ref, onMounted, onBeforeUnmount} from "vue";
+onMounted(() => {
+  document.addEventListener('click', close);
+});
 
 const show = ref(false);
 const container = ref();
 
-const close = (event) => {
+function close (event) {
   if(container.value.contains(event.target)) return
   else {
     show.value = false;
@@ -24,11 +27,9 @@ const close = (event) => {
 const handleShow = () => {
   show.value = !show.value
 }
-onMounted(() => {
-  document.addEventListener('click', close);
-});
+
 onBeforeUnmount(() => {
-  document.removeEventListener('click', this.close);
+  document.removeEventListener('click', close);
 })
 </script>
 

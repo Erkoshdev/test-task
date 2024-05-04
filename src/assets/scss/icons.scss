@@ -1,0 +1,52 @@
+@import "variables";
+
+i.icon {
+  display: inline-block;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  transition: .2s;
+  &.up {
+    transform: rotate(-180deg);
+  }
+  &.down {
+    transform: rotate(180deg);
+  }
+  &.left {
+    transform: rotate(-90deg);
+  }
+  &.right {
+    transform: rotate(90deg);
+  }
+}
+
+//sizes
+.size-16 {
+  mask-size: 16px 16px;
+  width: 16px;
+  height: 16px;
+}
+
+//colors
+.Standart-White {
+  background-color: $Standart-White!important;
+}
+.Neutral-Neutral-500 {
+  background-color: $Neutral-Neutral-500!important;
+}
+
+//icon names
+.loup {
+  @extend i, .icon;
+  -webkit-mask-image: url("@/assets/icons/loup.svg");
+  mask-image: url("@/assets/icons/loup.svg");
+}
+.calendar {
+  @extend i, .icon;
+  -webkit-mask-image: url("@/assets/icons/calendar.svg");
+  mask-image: url("@/assets/icons/calendar.svg");
+}
+.building {
+  @extend i, .icon;
+  -webkit-mask-image: url("@/assets/icons/building.svg");
+  mask-image: url("@/assets/icons/building.svg");
+}
