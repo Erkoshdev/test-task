@@ -9,8 +9,6 @@
 </template>
 
 <script setup>
-import {defineProps, defineEmits} from 'vue';
-
 const emits = defineEmits(['click'])
 const props = defineProps({
   type: {
@@ -20,7 +18,9 @@ const props = defineProps({
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "src/assets/scss/variables";
+
 .btn {
   display: flex;
   align-items: center;
@@ -39,7 +39,7 @@ const props = defineProps({
   }
 }
 .primary {
-  background: var(--Primary-Blue-500, #007BFF);
-  color: var(--Standart-White, #FFF);
+  background: $Primary-Blue-500;
+  color: $Standart-White;
 }
 </style>

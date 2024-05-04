@@ -3,17 +3,24 @@
     <div class="table-tools">
       <div class="table-tools-left">
         <v-input v-model="search" width="360px" placeholder="Поиск">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M11.0156 10.0781L13.875 12.9375L12.9375 13.875L10.0781 11.0156C9.56771 11.4323 8.98958 11.7552 8.34375 11.9844C7.70833 12.2135 7.03646 12.3281 6.32812 12.3281C5.50521 12.3281 4.72917 12.1719 4 11.8594C3.27083 11.5469 2.63542 11.1198 2.09375 10.5781C1.55208 10.0365 1.125 9.40104 0.8125 8.67188C0.489583 7.94271 0.328125 7.16146 0.328125 6.32812C0.328125 5.50521 0.489583 4.72917 0.8125 4C1.125 3.27083 1.55208 2.63542 2.09375 2.09375C2.63542 1.55208 3.27083 1.125 4 0.8125C4.72917 0.489583 5.50521 0.328125 6.32812 0.328125C7.16146 0.328125 7.94271 0.489583 8.67188 0.8125C9.40104 1.125 10.0365 1.55208 10.5781 2.09375C11.1198 2.63542 11.5469 3.27083 11.8594 4C12.1719 4.72917 12.3281 5.50521 12.3281 6.32812C12.3281 7.03646 12.2135 7.71354 11.9844 8.35938C11.7552 8.99479 11.4323 9.56771 11.0156 10.0781ZM9.6875 9.57812C10.0938 9.16146 10.4115 8.67708 10.6406 8.125C10.8802 7.5625 11 6.96354 11 6.32812C11 5.68229 10.8802 5.07812 10.6406 4.51562C10.3906 3.95312 10.0521 3.46354 9.625 3.04688C9.20833 2.61979 8.71875 2.28125 8.15625 2.03125C7.58333 1.79167 6.97396 1.67188 6.32812 1.67188C5.68229 1.67188 5.07812 1.79167 4.51562 2.03125C3.95312 2.28125 3.45833 2.61979 3.03125 3.04688C2.61458 3.46354 2.28125 3.95312 2.03125 4.51562C1.79167 5.07812 1.67188 5.68229 1.67188 6.32812C1.67188 6.97396 1.79167 7.58333 2.03125 8.15625C2.28125 8.71875 2.61458 9.21354 3.03125 9.64062C3.45833 10.0573 3.95312 10.3906 4.51562 10.6406C5.07812 10.8802 5.68229 11 6.32812 11C6.96354 11 7.55729 10.8854 8.10938 10.6562C8.67188 10.4167 9.16146 10.0938 9.57812 9.6875L9.6875 9.57812Z" fill="#98A2B3"/>
-          </svg>
+          <VIcon icon="loup" size="size-16" color="Neutral-Neutral-500"/>
         </v-input>
       </div>
       <div class="table-tools-right">
-        <v-select></v-select>
+        <v-select :options="[{label: 1951, id: 1}, {label: 1951, id: 2}, {label: 1951, id: 3}, {label: 1951, id: 4}]">
+          <template #toggle>
+            <VIcon icon="calendar" size="size-16" color="Neutral-Neutral-500"/>
+            <span>Год</span>
+          </template>
+        </v-select>
+        <v-select :options="[{label: 'Аудиокнига', id: 1}, {label: 'DVD диск', id: 2}, {label: 'Бумажный', id: 3}, {label: 'Твердый переплет', id: 4}, {label: 'Audio CD', id: 5}]">
+          <template #toggle>
+            <VIcon icon="building" size="size-16" color="Neutral-Neutral-500"/>
+            <span>Формат книги</span>
+          </template>
+        </v-select>
         <v-button>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M11.0156 10.0781L13.875 12.9375L12.9375 13.875L10.0781 11.0156C9.56771 11.4323 8.98958 11.7552 8.34375 11.9844C7.70833 12.2135 7.03646 12.3281 6.32812 12.3281C5.50521 12.3281 4.72917 12.1719 4 11.8594C3.27083 11.5469 2.63542 11.1198 2.09375 10.5781C1.55208 10.0365 1.125 9.40104 0.8125 8.67188C0.489583 7.94271 0.328125 7.16146 0.328125 6.32812C0.328125 5.50521 0.489583 4.72917 0.8125 4C1.125 3.27083 1.55208 2.63542 2.09375 2.09375C2.63542 1.55208 3.27083 1.125 4 0.8125C4.72917 0.489583 5.50521 0.328125 6.32812 0.328125C7.16146 0.328125 7.94271 0.489583 8.67188 0.8125C9.40104 1.125 10.0365 1.55208 10.5781 2.09375C11.1198 2.63542 11.5469 3.27083 11.8594 4C12.1719 4.72917 12.3281 5.50521 12.3281 6.32812C12.3281 7.03646 12.2135 7.71354 11.9844 8.35938C11.7552 8.99479 11.4323 9.56771 11.0156 10.0781ZM9.6875 9.57812C10.0938 9.16146 10.4115 8.67708 10.6406 8.125C10.8802 7.5625 11 6.96354 11 6.32812C11 5.68229 10.8802 5.07812 10.6406 4.51562C10.3906 3.95312 10.0521 3.46354 9.625 3.04688C9.20833 2.61979 8.71875 2.28125 8.15625 2.03125C7.58333 1.79167 6.97396 1.67188 6.32812 1.67188C5.68229 1.67188 5.07812 1.79167 4.51562 2.03125C3.95312 2.28125 3.45833 2.61979 3.03125 3.04688C2.61458 3.46354 2.28125 3.95312 2.03125 4.51562C1.79167 5.07812 1.67188 5.68229 1.67188 6.32812C1.67188 6.97396 1.79167 7.58333 2.03125 8.15625C2.28125 8.71875 2.61458 9.21354 3.03125 9.64062C3.45833 10.0573 3.95312 10.3906 4.51562 10.6406C5.07812 10.8802 5.68229 11 6.32812 11C6.96354 11 7.55729 10.8854 8.10938 10.6562C8.67188 10.4167 9.16146 10.0938 9.57812 9.6875L9.6875 9.57812Z" fill="white"/>
-          </svg>
+          <VIcon icon="loup" size="size-16" color="Standart-White"/>
           Поиск
         </v-button>
       </div>
@@ -47,6 +54,7 @@ import VInput from "@/components/VInput.vue";
 import {onMounted, ref} from "vue";
 import VSelect from "@/components/VSelect.vue";
 import VButton from "@/components/VButton.vue";
+import VIcon from "@/components/VIcon.vue";
 
 onMounted(() => {
   fetchData();
@@ -74,18 +82,20 @@ const search = ref('');
 </script>
 
 <style lang="scss" scoped>
+@import "src/assets/scss/variables";
+
 .table {
-  border-radius: 16px;
-  border: 1px solid #F0F2F5;
+  border: 1px solid $Neutral-Neutral-200;
   background: #FFF;
   margin-top: 16px;
-  overflow: hidden;
+  border-radius: 16px;
 }
 .table-tools {
+  border-radius: 16px 16px 0 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #fff;
+  background: $Standart-White;
   padding: var(--Indent-ind-12, 12px) var(--Indent-ind-24, 24px);
 }
 .table-tools-right {
@@ -109,10 +119,10 @@ const search = ref('');
 }
 .table-header {
   display: flex;
-  background: #F7F9FC;
+  background: $Neutral-Neutral-100;
   .table-data {
     padding: 12px 24px;
-    color: #667185;
+    color: $Neutral-Neutral-600;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
@@ -121,10 +131,11 @@ const search = ref('');
 }
 .table-row {
   display: flex;
-  border-bottom: 1px solid #F0F2F5;
-  background: #FFF;
+  border-bottom: 1px solid $Neutral-Neutral-200;
+  background: $Standart-White;
   &:last-child {
     border-bottom: none;
+    border-radius: 0 0 16px 16px;
   }
   .table-data {
     padding: 24px;
@@ -134,7 +145,7 @@ const search = ref('');
     align-items: center;
   }
   .table-data p {
-    color: #1D2739;
+    color: $Neutral-Neutral-900;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -153,8 +164,8 @@ const search = ref('');
 .book-format {
   padding: 4px 8px;
   border-radius: 8px;
-  background: #E6F2FF;
-  color: #1D2739;
+  background: $Primary-Blue-50;
+  color: $Neutral-Neutral-900;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
