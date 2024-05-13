@@ -105,12 +105,6 @@ function handleSort() {
   }
 }
 
-function compareArrays(array1, array2) {
-  return array1.every(function(element, index) {
-    return element === array2[index];
-  });
-}
-
 const years = ref([]);
 const formats = ref([]);
 

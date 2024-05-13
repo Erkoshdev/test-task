@@ -18,32 +18,6 @@
   </div>
 </template>
 
-<!--<script setup>-->
-<!--import {ref, watch} from "vue";-->
-
-<!--const props = defineProps({-->
-<!--  options: {-->
-<!--    type: Array,-->
-<!--    default: () => []-->
-<!--  },-->
-<!--  modelValue: {-->
-<!--    type: Array,-->
-<!--    default: () => []-->
-<!--  },-->
-<!--});-->
-
-<!--const emit = defineEmits(['update', 'input'])-->
-
-<!--const selectedOption = ref(props.modelValue);-->
-
-<!--watch(selectedOption, () => {-->
-<!--  emit('update:modelValue', selectedOption)-->
-<!--});-->
-<!--watch(props.modelValue, (newValue) => {-->
-<!--  selectedOption.value = newValue;-->
-<!--})-->
-<!--</script>-->
-
 <script>
 import { defineComponent } from 'vue'
 
@@ -75,7 +49,6 @@ export default defineComponent({
       this.selectedOption = newValue;
     },
   },
-
 })
 </script>
 
