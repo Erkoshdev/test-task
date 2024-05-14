@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-const emits = defineEmits(['click'])
+const emit = defineEmits(['click'])
 const props = defineProps({
   type: {
     type: String,

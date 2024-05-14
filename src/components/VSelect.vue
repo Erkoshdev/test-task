@@ -16,7 +16,7 @@
             <button class="clear-btn" @click="clear">Сбросить</button>
           </div>
           <div class="select-dropdown-menu">
-            <v-checkbox-group :options="options" v-model="values"/>
+            <v-checkbox-group :options="options" v-model="values "/>
           </div>
         </div>
       </template>

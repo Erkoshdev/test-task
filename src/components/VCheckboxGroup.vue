@@ -18,62 +18,38 @@
   </div>
 </template>
 
-<script setup>
-import {ref, watch} from "vue";
+<script>
+import { defineComponent } from 'vue'
 
-const props = defineProps({
-  options: {
-    type: Array,
-    default: () => []
+export default defineComponent({
+  name: 'VCheckboxGroup',
+
+  props: {
+    options: {
+      type: Array,
+      default: () => []
+    },
+    modelValue: {
+      type: Array,
+      default: () => []
+    },
   },
-  modelValue: {
-    type: Array,
-    default: () => []
+
+  data() {
+    return {
+      selectedOption: this.modelValue,
+    }
   },
-});
 
-const emit = defineEmits(['update', 'input'])
-
-const selectedOption = ref(props.modelValue);
-
-watch(selectedOption, () => {
-  emit('update:modelValue', selectedOption)
-});
-watch(props.modelValue, (newValue) => {
-  selectedOption.value = newValue;
+  watch: {
+    selectedOption() {
+      this.$emit('update:modelValue', this.selectedOption);
+    },
+    modelValue(newValue) {
+      this.selectedOption = newValue;
+    },
+  },
 })
-
-// import { defineComponent } from 'vue'
-
-// export default defineComponent({
-  // name: 'VCheckboxGroup',
-
-  // props: {
-  //   options: {
-  //     type: Array,
-  //     default: () => []
-  //   },
-  //   modelValue: {
-  //     type: Array,
-  //     default: () => []
-  //   },
-  // },
-
-  // data() {
-  //   return {
-  //     selectedOption: this.modelValue,
-  //   }
-  // },
-
-  // watch: {
-    // selectedOption() {
-    //   this.$emit('update:modelValue', this.selectedOption);
-    // },
-    // modelValue(newValue) {
-    //   this.selectedOption = newValue;
-    // },
-  // },
-// })
 </script>
 
 <style lang="scss" scoped>

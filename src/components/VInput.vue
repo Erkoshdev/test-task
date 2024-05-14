@@ -1,9 +1,9 @@
 <template>
-  <div class="form-container" :style="{width: props.width}">
+  <div class="form-container" :style="{width: width}">
     <input
-        :type="props.type"
-        :value="props.modelValue"
-        :placeholder="props.placeholder"
+        :type="type"
+        :value="modelValue"
+        :placeholder="placeholder"
         @input="updateInput"
     >
     <slot></slot>
